@@ -2,6 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import chamomile from './chamomile_2.jpg'
+import ra from './ra4.jpg'
 
 import styles from './style.css';
 
@@ -22,13 +23,19 @@ class App extends Component {
                         </div>
                     </div>
                     <div className={styles['herb-tradition-container']}>
-                        <div className={styles['herb-tradition-header-container']}>{'Tradycja'}</div>
-                        <div className={styles['herb-tradition-content-container']}>{herb_tradition_content}</div>
+                        <div className={styles['tradition-icon-container']}>
+                            <img className={styles['herb-content-icon']} src={ra} alt='tradition icon'/>
+                        </div>
+                        <div className={styles['herb-tradition-content-container']}>
+                            <div className={styles['herb-tradition-header-container']}>{'Tradycja'}</div>
+                            <div className={styles['herb-tradition-content-container']}>{herb_tradition_content}</div>
+                        </div>
                     </div>
                     <div className={styles['herb-effects-container']}>
                         <div className={styles['herb-tradition-header-container']}>{'Działanie'}</div>
                         <div className={styles['herb-tradition-content-container']}>
                             <ul>
+                                <li>{'Wspomagające trawienie'}</li>
                                 <li>{'Przeciwzapalne'}</li>
                                 <li>{'Nasenne i uspokajające'}</li>
                                 <li>{'Wspomagające gojenie'}</li>
@@ -39,6 +46,7 @@ class App extends Component {
                         <div className={styles['herb-tradition-header-container']}>{'Dolegliwości'}</div>
                         <div className={styles['herb-tradition-content-container']}>
                             <ul>
+                                <li>{'Niestrawność'}</li>
                                 <li>{'Infekcje'}</li>
                                 <li>{'Stres'}</li>
                                 <li>{'Lekkie urazy skóry'}</li>
