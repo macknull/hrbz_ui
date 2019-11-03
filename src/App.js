@@ -2,7 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import chamomile from './chamomile_2.jpg'
-import ra from './ra4.jpg'
+import ra from './ra3.png'
 
 import styles from './style.css';
 
@@ -23,12 +23,12 @@ class App extends Component {
                         </div>
                     </div>
                     <div className={styles['herb-tradition-container']}>
-                        <div className={styles['tradition-icon-container']}>
-                            <img className={styles['herb-content-icon']} src={ra} alt='tradition icon'/>
-                        </div>
                         <div className={styles['herb-tradition-content-container']}>
                             <div className={styles['herb-tradition-header-container']}>{'Tradycja'}</div>
-                            <div className={styles['herb-tradition-content-container']}>{herb_tradition_content}</div>
+                            <div className={styles['herb-tradition-subtext-container']}>{herb_tradition_content}</div>
+                        </div>
+                        <div className={styles['tradition-icon-container']}>
+                            <img className={styles['herb-content-icon']} src={ra} alt='tradition icon'/>
                         </div>
                     </div>
                     <div className={styles['herb-effects-container']}>
@@ -42,6 +42,7 @@ class App extends Component {
                             </ul>
                         </div>
                     </div>
+                    <div className={styles['herbz-sections-spacing']}> </div>
                     <div className={styles['herb-effects-container']}>
                         <div className={styles['herb-tradition-header-container']}>{'Dolegliwości'}</div>
                         <div className={styles['herb-tradition-content-container']}>
