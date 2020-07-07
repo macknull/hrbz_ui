@@ -1,8 +1,10 @@
 import React from 'react';
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import chamomile from './chamomile_2.jpg'
-import ra from './ra3.png'
+// import chamomile from './chamomile_2.jpg'
+import chamomile from './chamomile_wiki.jpg'
+// import ra from './ra3.png'
+import sun from './sun.jpg'
 
 import styles from './style.css';
 
@@ -28,7 +30,7 @@ class App extends Component {
                             <div className={styles['herb-tradition-subtext-container']}>{herb_tradition_content}</div>
                         </div>
                         <div className={styles['tradition-icon-container']}>
-                            <img className={styles['herb-content-icon']} src={ra} alt='tradition icon'/>
+                            <img className={styles['herb-content-icon']} src={sun} alt='tradition icon'/>
                         </div>
                     </div>
                     <div className={styles['herb-effects-container']}>
