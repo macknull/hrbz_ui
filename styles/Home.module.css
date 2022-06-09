@@ -12,6 +12,12 @@
   padding: 20px 20px 20px 20px;
 }
 
+.herb-content-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .herb-card-container {
   background-color: white;
   margin-top: 20px;
