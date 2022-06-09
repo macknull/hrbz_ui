@@ -1,0 +1,152 @@
+/* :^) */
+@import url('https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao|Montserrat:400,400i&display=swap');
+
+.app-container {
+  /*display: inline-block;*/
+}
+
+.title {
+  font-family: 'Liu Jian Mao Cao', cursive;
+  font-size: 60px;
+  /*color: blueviolet;*/
+  padding: 20px 20px 20px 20px;
+}
+
+.herb-card-container {
+  background-color: white;
+  margin-top: 20px;
+  width: 800px;
+  height: auto;
+  padding: 20px 20px 20px 20px;
+  border-style: solid;
+  border-width: 2px;
+
+  font-family: 'Montserrat', sans-serif;
+  /*font-size: 15px;*/
+  /*font-weight: bold;*/
+  color: black;
+
+  box-sizing: content-box;
+  list-style: none;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+
+  -webkit-flex-flow: row wrap;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.herb-header-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+.herb-title-container {
+}
+
+.herb-icon-container {
+  width: 500px;
+  height: 500px;
+  padding-right: 20px;
+}
+
+.herb-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /*border-style: solid;*/
+  /*border-width: 2px;*/
+}
+
+.herb-name-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.herb-name-locale-container {
+  font-size: 40px;
+  flex-grow: 1;
+}
+
+.herb-name-latin-container {
+  font-size: 20px;
+  font-style: italic;
+  flex-grow: 10;
+}
+
+.herb-tradition-container {
+  margin-top: 20px;
+  padding: 10px 20px 20px 20px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #003400;
+
+  background-color: #ffffC8;
+}
+
+.herb-tradition-header-container {
+  font-size: 30px;
+  flex-grow: 1;
+}
+
+.herb-tradition-subtext-container {
+  padding: 5px 5px 5px 5px;
+
+}
+
+.herb-effects-container {
+  width: 40%;
+  background-color: #ffffC8;
+  margin-top: 20px;
+  padding: 10px 20px 20px 20px;
+  border-style: solid;
+  border-width: 2px;
+  flex-grow: 1;
+}
+
+.tradition-icon-container {
+  width: 200px;
+  height: 200px;
+  margin-right: 20px;
+  flex-grow: 1;
+  /*background-color: white;*/
+}
+
+.herb-content-icon {
+  /*width: auto;*/
+  /*height: 100%;*/
+  /*object-fit: contain;*/
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  opacity: 0.4;
+  /*border-style: solid;*/
+  /*border-width: 2px;*/
+}
+
+.herb-tradition-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+.herb-tradition-content-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.herbz-sections-spacing {
+  width: 20px;
+}
