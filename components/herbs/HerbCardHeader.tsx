@@ -10,15 +10,15 @@ interface HerbCardHeaderProps {
   latinName: string,
   img: string
 }
-const HerbCardHeader = ({ title }: HerbCardHeaderProps) => {
+const HerbCardHeader = ({ name, latinName, ...props }: HerbCardHeaderProps) => {
   return (
     <div className={styles['herb-header-container']}>
       <div className={styles['herb-icon-container']}>
         <img className={styles['herb-icon']} src="/img/chamomile_wiki.jpg" alt="chamomile icon" />
-      </div>|
+      </div>
       <div className={styles['herb-name-container']}>
-        <div className={styles['herb-name-locale-container']}>RUMIANEK</div>
-        <div className={styles['herb-name-latin-container']}>Matricaria chamomilla</div>
+        <div className={styles['herb-name-locale-container']}>{name}</div>
+        <div className={styles['herb-name-latin-container']}>{latinName}</div>
       </div>
     </div>
   )

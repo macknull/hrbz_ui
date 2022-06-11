@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 8080",
+    "dev": "next dev -p 8080 & local-ssl-proxy --source 3000 --target 3001",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -12,6 +12,8 @@
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.8.3",
+    "axios": "^0.27.2",
+    "local-ssl-proxy": "^1.3.0",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0"

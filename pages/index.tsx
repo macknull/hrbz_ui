@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import HerbCard from '../components/herbs/HerbCard'
 import styles from '../styles/Home.module.css'
 
@@ -18,11 +19,9 @@ const Home: NextPage<HomeProps> = ({ title }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles['title']}>HERB.ME</div>
-      <main className={styles['app-container']}>
-        <div className={styles.title}>{title}</div>
-        <HerbCard title='chamomile test title' />
-      </main>
-
+      <div className='home-page-container' style={{ padding: '10px', color: 'darkgreen' } }>
+        <Link href='http://localhost:8080/herbs/62a3adfa142940dd012a3a52'>Rumianek pospolity</Link>
+      </div>
       <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
