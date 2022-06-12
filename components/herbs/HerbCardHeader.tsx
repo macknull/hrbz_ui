@@ -1,16 +1,13 @@
 import Image from 'next/image'
-import styles from '../../styles/Home.module.css'
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import chamomileImg from '../../public/img/chamomile_wiki.jpg'
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box'
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
+import Paper from '@mui/material/Paper'
+import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography'
 
 interface HerbCardHeaderProps {
-  name: string, 
-  latinName: string,
+  name: string
+  latinName: string
   img: string
 }
 const HerbCardHeader = ({ name, latinName, ...props }: HerbCardHeaderProps) => {
@@ -18,16 +15,28 @@ const HerbCardHeader = ({ name, latinName, ...props }: HerbCardHeaderProps) => {
     <Card>
       <CardContent>
         <Paper>
-          <Grid container spacing={4} direction='row'>
+          <Grid container spacing={4} direction="row">
             <Grid item xs={6}>
-              <Image src={chamomileImg} alt="chamomile picture" />
+              <div
+                style={{ position: 'relative', width: '100%', height: '500px' }}
+              >
+                <Image
+                  src="/img/chamomile_wiki.jpg"
+                  alt="chamomile picture"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
             </Grid>
-            <Grid container item direction='column' xs={6} spacing={2}>
+            <Grid container item direction="column" xs={6} spacing={2}>
               <Grid item>
                 <Typography variant="h2">{name}</Typography>
               </Grid>
               <Grid item>
-                <Typography variant="h4" sx={{ fontStyle: 'italic', fontWeight: 'light' }}>
+                <Typography
+                  variant="h4"
+                  sx={{ fontStyle: 'italic', fontWeight: 'light' }}
+                >
                   {latinName}
                 </Typography>
               </Grid>

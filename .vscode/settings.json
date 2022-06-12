@@ -1,4 +1,4 @@
 {
-  "standard.autoFixOnSave": true,
-  "standard.engine": "ts-standard"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
 }
