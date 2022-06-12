@@ -4,21 +4,29 @@ import HerbTraditionCard from './HerbTraditionCard'
 import HerbEffectsCard from './HerbEffectsCard'
 import HerbAilmentsCard from './HerbAilmentsCard'
 import { Herb } from '../../lib/herbs'
+import { alpha, styled } from '@mui/material/styles';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Paper from '@mui/material/Paper';
 
 interface HerbCardProps {
   herb: Herb, 
 }
 const HerbCard = ({ herb }: HerbCardProps) => {
   return (
-    <div className={styles['herb-card-container']}>
-      <HerbCardHeader name={herb.name} latinName={herb.latin_name} img='/img/chamomile_wiki.jpg' />
-      <div className={styles['herb-content-container']} >
-        <HerbTraditionCard content={herb.description} />
-        <HerbEffectsCard />
-        <div className={styles['herbz-sections-spacing']}> </div>
-        <HerbAilmentsCard />
-      </div>
-    </div>
+    <Card>
+      <Paper variant="outlined">
+      <CardContent>
+        <HerbCardHeader name={herb.name} latinName={herb.latin_name} img='/img/chamomile_wiki.jpg' />
+        <div className={styles['herb-content-container']} >
+          <HerbTraditionCard content={herb.description} />
+          <HerbEffectsCard />
+          <div className={styles['herbz-sections-spacing']}> </div>
+          <HerbAilmentsCard />
+        </div>
+      </CardContent>
+      </Paper>
+    </Card>
   )
 }
 

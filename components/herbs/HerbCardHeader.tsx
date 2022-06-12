@@ -1,9 +1,12 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
-
-const herbTraditionContent = 'W medycynie tradycyjnej  uchodził za panaceum. Tradycja stosowania rumianku w ziołolecznictwie sięga czasów najdawniejszych. Starożytni Egipcjanie uważali rumianek za dar Ra, boga Słońca i leczyli za jego pomocą oparzenia słoneczne. Dioskurides w „De Materia Medica” (50-70 r.n.e.) zalecał go jako środek na ból brzucha.'
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import chamomileImg from '../../public/img/chamomile_wiki.jpg'
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box'
 
 interface HerbCardHeaderProps {
   name: string, 
@@ -12,15 +15,27 @@ interface HerbCardHeaderProps {
 }
 const HerbCardHeader = ({ name, latinName, ...props }: HerbCardHeaderProps) => {
   return (
-    <div className={styles['herb-header-container']}>
-      <div className={styles['herb-icon-container']}>
-        <img className={styles['herb-icon']} src="/img/chamomile_wiki.jpg" alt="chamomile icon" />
-      </div>
-      <div className={styles['herb-name-container']}>
-        <div className={styles['herb-name-locale-container']}>{name}</div>
-        <div className={styles['herb-name-latin-container']}>{latinName}</div>
-      </div>
-    </div>
+    <Card>
+      <CardContent>
+        <Paper>
+          <Grid container spacing={4} direction='row'>
+            <Grid item xs={6}>
+              <Image src={chamomileImg} alt="chamomile picture" />
+            </Grid>
+            <Grid container item direction='column' xs={6} spacing={2}>
+              <Grid item>
+                <Typography variant="h2">{name}</Typography>
+              </Grid>
+              <Grid item>
+                <Typography variant="h4" sx={{ fontStyle: 'italic', fontWeight: 'light' }}>
+                  {latinName}
+                </Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Paper>
+      </CardContent>
+    </Card>
   )
 }
 
