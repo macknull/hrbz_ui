@@ -23,6 +23,7 @@ const Home: NextPage<string, never> = () => {
           height: '100vh',
           zIndex: '-1',
           opacity: '1.0',
+          backgroundColor: '#80ed99',
         }}
       />
       <Container maxWidth="md">
@@ -71,6 +72,7 @@ const Home: NextPage<string, never> = () => {
               sx={{
                 fontStyle: 'italic',
                 paddingTop: '40px',
+                fontWeight: 'light',
               }}
             >
               search for a herb:

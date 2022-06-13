@@ -30,7 +30,9 @@ const HerbCardHeader = ({ name, latinName, img }: HerbCardHeaderProps) => {
             </Grid>
             <Grid container item direction="column" xs={6} spacing={2}>
               <Grid item>
-                <Typography variant="h2">{name}</Typography>
+                <Typography variant="h2" sx={{ pt: '40px' }}>
+                  {name}
+                </Typography>
               </Grid>
               <Grid item>
                 <Typography
