@@ -5,6 +5,7 @@ import CardHeader from '@mui/material/CardHeader'
 import CardMedia from '@mui/material/CardMedia'
 import Paper from '@mui/material/Paper'
 import Grid from '@mui/material/Grid'
+import { css } from '@emotion/react'
 
 interface HerbContentSectionCardProps {
   title: string
@@ -18,7 +19,7 @@ const HerbContentSectionCard = ({
 }: HerbContentSectionCardProps) => {
   return (
     <Card>
-      <Paper>
+      <Paper sx={{ pr: '10px' }}>
         <Grid container direction="row">
           <Grid container item direction="column" xs={img ? 8 : true}>
             <Grid item>
@@ -30,19 +31,22 @@ const HerbContentSectionCard = ({
           </Grid>
           {img && (
             <Grid item xs={4}>
-              <CardMedia>
+              <CardMedia sx={{ width: '100%', height: '100%' }}>
                 <div
-                  style={{
-                    position: 'relative',
-                    width: '100%',
-                    height: '100%',
-                  }}
+                  css={css`
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 100px;
+                    overflow: hidden;
+                  `}
                 >
                   <Image
                     alt={`herb ${title} section image`}
                     src={img}
                     layout="fill"
                     objectFit="contain"
+                    style={{ opacity: 0.5 }}
                   />
                 </div>
               </CardMedia>

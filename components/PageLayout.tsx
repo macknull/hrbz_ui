@@ -13,7 +13,7 @@ const PageLayout = ({ children }: LayoutProps) => {
       <main
         css={css`
           position: relative;
-          top: 132px;
+          top: 70px;
         `}
       >
         {children}

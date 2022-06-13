@@ -5,6 +5,7 @@ export interface Herb {
   name: string
   latin_name: string
   description: string
+  img: string
 }
 
 export async function getAllHerbs(): Promise<Herb[]> {

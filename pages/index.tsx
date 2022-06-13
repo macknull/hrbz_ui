@@ -1,68 +1,83 @@
-import { ChangeEvent, SyntheticEvent, useState } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import TextField from '@mui/material/TextField'
 import Stack from '@mui/material/Stack'
-import Autocomplete from '@mui/material/Autocomplete'
 import Container from '@mui/material/Container'
-import { Typography } from '@mui/material'
-import Router from 'next/router'
-import { debounce } from 'lodash'
-import { getHerbsByName } from '../lib/herbs'
-
-interface SearchOption {
-  label: string
-  _id: string
-}
+import { Box, Typography } from '@mui/material'
+import Paper from '@mui/material/Paper'
+import SearchBar from '../components/SearchBar'
+import logo from '../public/img/logo/herbme_logo_123.png'
+import Image from 'next/image'
 
 const Home: NextPage<string, never> = () => {
-  const [options, setOptions] = useState([
-    {
-      label: 'rumianek zwyczajny (matricaria chamomila)',
-      _id: '62a3adfa142940dd012a3a52',
-    },
-  ])
-
-  async function handleInputChange(
-    event: ChangeEvent<unknown>,
-    value: string
-  ): Promise<void> {
-    const herbs = await getHerbsByName(value)
-    setOptions(
-      herbs.map((herb) => {
-        return {
-          label: `${herb.name} (${herb.latin_name})`,
-          _id: herb._id,
-        }
-      })
-    )
-  }
-
   return (
     <div>
       <Head>
         <title>HRBZ.org - Encyclopedia herbam</title>
       </Head>
+      <Paper
+        sx={{
+          backgroundImage: `url(/img/bg/pattern_5_scaled.png)`,
+          position: 'fixed',
+          top: 0,
+          width: '100vw',
+          height: '100vh',
+          zIndex: '-1',
+          opacity: '1.0',
+        }}
+      />
       <Container maxWidth="md">
-        <Stack alignItems="center" spacing={2}>
-          <Typography variant="h4">search for a herb</Typography>
-          <Autocomplete
-            options={options}
-            id="herb-search"
-            freeSolo
-            renderInput={(params) => <TextField {...params} />}
-            onChange={(
-              event: ChangeEvent<unknown>,
-              value: string | SearchOption | null
-            ) => {
-              value &&
-                typeof value !== 'string' &&
-                Router.push(`/herbs/${value._id}`)
-            }}
-            onInputChange={debounce(handleInputChange, 300)}
-            sx={{ width: 600 }}
-          />
-        </Stack>
+        <Paper
+          sx={{
+            background: 'white',
+            marginTop: '60px',
+          }}
+          elevation={6}
+        >
+          <Stack
+            direction="column"
+            alignItems="center"
+            justifyContent="center"
+            sx={{ pb: '60px', pt: '20px' }}
+          >
+            <Paper
+              elevation={4}
+              sx={{ padding: '16px', background: 'darkgreen' }}
+            >
+              <Stack direction="column" alignItems="center">
+                <Box
+                  sx={{ position: 'relative', height: '123px', width: '462px' }}
+                >
+                  <Image
+                    alt={`herbme logo`}
+                    src={logo}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </Box>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontStyle: 'italic',
+                    fontWeight: 'light',
+                    color: 'lightgreen',
+                  }}
+                >
+                  Encyclopedia hebam
+                </Typography>
+              </Stack>
+            </Paper>
+            <Typography
+              variant="h4"
+              sx={{
+                fontStyle: 'italic',
+                paddingTop: '40px',
+              }}
+            >
+              search for a herb:
+            </Typography>
+            <SearchBar />
+          </Stack>
+        </Paper>
       </Container>
     </div>
   )

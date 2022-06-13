@@ -10,7 +10,7 @@ interface HerbCardHeaderProps {
   latinName: string
   img: string
 }
-const HerbCardHeader = ({ name, latinName, ...props }: HerbCardHeaderProps) => {
+const HerbCardHeader = ({ name, latinName, img }: HerbCardHeaderProps) => {
   return (
     <Card>
       <CardContent>
@@ -21,7 +21,7 @@ const HerbCardHeader = ({ name, latinName, ...props }: HerbCardHeaderProps) => {
                 style={{ position: 'relative', width: '100%', height: '500px' }}
               >
                 <Image
-                  src="/img/chamomile_wiki.jpg"
+                  src={img}
                   alt="chamomile picture"
                   layout="fill"
                   objectFit="contain"

@@ -9,8 +9,16 @@ const HerbTraditionCard = ({ content, img }: HerbContentSectionCardProps) => {
   return (
     <HerbContentSectionCard
       title="Tradycja"
-      content={<Typography variant="body1">{content}</Typography>}
-      img={img}
+      content={
+        <Typography
+          variant="body1"
+          sx={{
+            paddingLeft: '16px',
+          }}
+        >
+          {content}
+        </Typography>
+      }
     />
   )
 }
