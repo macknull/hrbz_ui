@@ -2,6 +2,7 @@ import HerbCard from '../../components/herbs/HerbCard'
 import { getAllHerbs, getHerbById } from '../../lib/herbs'
 import { GetStaticPaths, InferGetStaticPropsType } from 'next'
 import Container from '@mui/material/Container'
+import Head from 'next/head'
 
 interface HerbParams {
   params: {
@@ -12,10 +13,16 @@ interface HerbParams {
 export default function Herb({
   herb,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const latinName = herb['latin_name']
   return (
-    <Container maxWidth="md">
-      <HerbCard herb={herb} />
-    </Container>
+    <>
+      <Head>
+        <title>herbme - {latinName}</title>
+      </Head>
+      <Container maxWidth="md">
+        <HerbCard herb={herb} />
+      </Container>
+    </>
   )
 }
 

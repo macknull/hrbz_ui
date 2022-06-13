@@ -7,29 +7,18 @@ import Paper from '@mui/material/Paper'
 import SearchBar from '../components/SearchBar'
 import logo from '../public/img/logo/herbme_logo_123.png'
 import Image from 'next/image'
+import { useTheme } from '@mui/material/styles'
 
 const Home: NextPage<string, never> = () => {
+  const theme = useTheme()
   return (
     <div>
       <Head>
-        <title>HRBZ.org - Encyclopedia herbam</title>
+        <title>herbme - Encyclopedia herbam</title>
       </Head>
-      <Paper
-        sx={{
-          backgroundImage: `url(/img/bg/pattern_5_scaled.png)`,
-          position: 'fixed',
-          top: 0,
-          width: '100vw',
-          height: '100vh',
-          zIndex: '-1',
-          opacity: '1.0',
-          backgroundColor: '#80ed99',
-        }}
-      />
       <Container maxWidth="md">
         <Paper
           sx={{
-            background: 'white',
             marginTop: '60px',
           }}
           elevation={6}
@@ -42,7 +31,7 @@ const Home: NextPage<string, never> = () => {
           >
             <Paper
               elevation={4}
-              sx={{ padding: '16px', background: 'darkgreen' }}
+              sx={{ padding: '16px', background: theme.palette.primary.dark }}
             >
               <Stack direction="column" alignItems="center">
                 <Box
@@ -60,7 +49,7 @@ const Home: NextPage<string, never> = () => {
                   sx={{
                     fontStyle: 'italic',
                     fontWeight: 'light',
-                    color: 'lightgreen',
+                    color: theme.palette.primary.contrastText,
                   }}
                 >
                   Encyclopedia hebam

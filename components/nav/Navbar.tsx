@@ -6,8 +6,16 @@ import { css } from '@emotion/react'
 import Paper from '@mui/material/Paper'
 import { Stack } from '@mui/material'
 import SearchBar from '../../components/SearchBar'
+import Switch from '@mui/material/Switch'
+import FormGroup from '@mui/material/FormGroup'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import { useTheme } from '@mui/material/styles'
+import { UseColorModeContext } from '../../pages/_app'
 
 const Navbar = () => {
+  const theme = useTheme()
+  const colorMode = UseColorModeContext()
+
   return (
     <div
       css={css`
@@ -34,6 +42,17 @@ const Navbar = () => {
             </Link>
           </nav>
           <SearchBar />
+          <FormGroup>
+            <FormControlLabel
+              control={
+                <Switch
+                  onChange={colorMode.toggleColorMode}
+                  checked={theme.palette.mode === 'dark'}
+                />
+              }
+              label={`${theme.palette.mode} mode`}
+            />
+          </FormGroup>
         </Stack>
       </Paper>
     </div>
