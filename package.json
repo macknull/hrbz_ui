@@ -1,6 +1,8 @@
 {
   "name": "hrbz_ui",
   "version": "0.1.0",
+  "author": "Maciej Molski-Mazurek",
+  "description": "herbme app // UI component",
   "private": true,
   "scripts": {
     "dev": "next dev -p 8080",
