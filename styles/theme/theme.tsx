@@ -18,7 +18,7 @@ export const getDesignTokens = (mode: PaletteMode) => ({
             contrastText: '#000',
           },
           background: {
-            default: '#00035b',
+            default: '#3f50b5',
             paper: '#00035b',
           },
         }

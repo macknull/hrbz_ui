@@ -28,7 +28,12 @@ const Navbar = () => {
       `}
     >
       <Paper elevation={2}>
-        <Stack direction="row" alignItems="center" spacing={12}>
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+          spacing={12}
+        >
           <nav>
             <Link href="/">
               <a
