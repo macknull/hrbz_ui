@@ -33,13 +33,13 @@ const HerbContentSectionCard = ({
             <Grid item xs={4}>
               <CardMedia sx={{ width: '100%', height: '100%' }}>
                 <div
-                  css={css`
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 100px;
-                    overflow: hidden;
-                  `}
+                  // css={css`
+                  //   position: relative;
+                  //   width: 100%;
+                  //   height: 100%;
+                  //   border-radius: 100px;
+                  //   overflow: hidden;
+                  // `}
                 >
                   <Image
                     alt={`herb ${title} section image`}
